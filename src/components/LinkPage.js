@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../index.css'
 
 export default props => {
-    const link = window.location.pathname.split('/')[1]
+    const link = window.location.pathname.split('/')[window.location.pathname.split('/').length-1]
     const params = window.location.search.split('&')
     params[0] = params[0].split('?')[1]
     const [state, setState] = useState({
@@ -66,10 +66,10 @@ export default props => {
                     : <label>Подписчиков: {state.info.subscriberCount} </label>
                 }
                 {
-                    state.params.videos !== false && <label>Загружено видео: {state.info.videoCount} </label>
+                    state.params.videos === true && <label>Загружено видео: {state.info.videoCount} </label>
                 }
                 {
-                    state.params.views !== false && <label>Просмотров всего: {state.info.viewCount} </label>
+                    state.params.views === true && <label>Просмотров всего: {state.info.viewCount} </label>
                 }
             </div>
         </div>

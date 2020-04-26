@@ -45,7 +45,7 @@ export default props => {
 
         setState({
             ...state,
-            res: `${state.loc}/${channel}?${params}`,
+            res: `${state.loc}${process.env.PUBLIC_URL}/${channel}?${params}`,
             clicked: true
         })
     }
