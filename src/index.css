@@ -178,6 +178,8 @@ input[type='radio']:checked + img{
 }
 
 .toggle {
+  border: 1px solid #003dda;
+
   isolation: isolate;
   position: relative;
   height: 24px;
@@ -216,7 +218,7 @@ input[type='radio']:checked + img{
 .indicator {
   height: 100%;
   width: 200%;
-  background: white;
+  background: #fff;
   border-radius: 13px;
   transform: translate3d(-75%, 0, 0);
   transition: transform 0.35s cubic-bezier(0.85, 0.05, 0.18, 1.35);
@@ -234,6 +236,10 @@ input[type='radio']:checked + img{
   h2 {
     font-size: 16px;
     width: 300px;
+  }
+
+  body{
+    padding-top: 10px;
   }
 
   * {
