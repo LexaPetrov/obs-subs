@@ -8,7 +8,7 @@ export default props => {
     const loc = window.location.origin
     const [state, setState] = useState({
         loc,
-        link: 'https://www.youtube.com/c/UC4-phUrGgm63fZ9qZ1GOxBQ',
+        link: '',
         // link: 'https://www.youtube.com/channel/UC4-phUrGgm63fZ9qZ1GOxBQ?view_as=subscriber',
         params: {
             theme: '',
