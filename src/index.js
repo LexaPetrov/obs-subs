@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 // "homepage": "http://lexapetrov.github.io/obs-subs",
 
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
     <React.StrictMode>
       <App />
     </React.StrictMode>
