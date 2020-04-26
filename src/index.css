@@ -54,9 +54,114 @@ input[type='number'] {
 }
 
 .tools {
+  max-width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.themes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.themeItem {
+  margin: 10px;
+}
+
+.themeItem img{
+  border-radius: 5px;
+  width: 300px;
+}
+
+
+.themeItem label {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type='radio']:checked + img{
+  box-shadow: 0 0 0 2px #003dda;
+}
+
+.link_theme1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /*  align-items: center; */
+  justify-content: center;
+  /* justify-content: space-around; */ 
+  font-size: 26px;
+  color: #9039FD;
+  font-weight: bold;
+  font-style: italic;
+  text-shadow: 1px 1px  0px #fff;
+}
+
+.link_theme1:before {
+  content: '';
+  background: url('./img/youtube-2.png');
+  width: 35px;
+  height: 35px;
+  display: block;
+  background-size: 35px 35px; background-repeat: no-repeat;
+}
+
+.link_theme2:before {
+  content: '';
+  background: url('./img/youtube-1.png');
+  width: 40px;
+  height: 40px;
+  display: block;
+  background-size: 40px 40px; background-repeat: no-repeat;
+}
+
+.link_theme2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /*  align-items: center; */
+  justify-content: center;
+  /* justify-content: space-around; */ 
+  font-size: 26px;
+  color: #FFD000;
+  font-weight: bold;
+  font-style: italic;
+  text-shadow: 1px 1px  0px #BF1F00;
+}
+
+.link_theme3 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /*  align-items: center; */
+  justify-content: center;
+  /* justify-content: space-around; */ 
+  font-size: 26px;
+  color: #E9E8E6;
+  font-weight: bold;
+  font-style: italic;
+  text-shadow: 1px 1px  0px red;
+}
+
+.link_theme3:before {
+  content: '';
+  background: url('./img/youtube-3.png');
+  width: 35px;
+  height: 35px;
+  display: block;
+  background-size: 35px 35px; background-repeat: no-repeat;
+}
+
+.link_theme1 label,
+.link_theme2 label,
+.link_theme3 label {
+  margin: 5px;
 }
 
 /* ---------checkbox------------- */
@@ -123,4 +228,28 @@ input[type='number'] {
 
 .toggle-state:checked ~ .toggle-inner .indicator {
   transform: translate3d(25%, 0, 0);
+}
+
+@media screen and (max-width: 390px) {
+  h2 {
+    font-size: 16px;
+    width: 300px;
+  }
+
+  * {
+    margin: 0 auto;
+  }
+
+  .themeItem img{
+    border-radius: 5px;
+    width: 200px;
+  }
+
+  .tools, .themes {
+    width: 300px;
+  }
+  .go {
+    font-size: 16px;
+  }
+
 }

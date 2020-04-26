@@ -16,7 +16,7 @@ export default props => {
             theme: '',
             goal: '',
             videos: false,
-            subs: true,
+            subs: false,
             views: false
         }
     })
@@ -56,14 +56,20 @@ export default props => {
                 }
             })
     }, []) // eslint-disable-line react-hooks/exhaustive-deps
-    
+        
     return (
         <div className='wrapper'>
-            <div className='link'>
+            <div className={`link_theme${state.params.theme}`}>
                 {
                 state.params.subs !== false && state.params.goal !== '' && state.params.goal !== undefined
-                    ? <label>Подписчиков: {state.info.subscriberCount}  /  {state.params.goal}</label> 
-                    : <label>Подписчиков: {state.info.subscriberCount}</label>
+                    ? <label>Подписчиков: {state.info.subscriberCount}  /  {state.params.goal} </label> 
+                    : <label>Подписчиков: {state.info.subscriberCount} </label>
+                }
+                {
+                    state.params.videos !== false && <label>Загружено видео: {state.info.videoCount} </label>
+                }
+                {
+                    state.params.views !== false && <label>Просмотров всего: {state.info.viewCount} </label>
                 }
             </div>
         </div>
