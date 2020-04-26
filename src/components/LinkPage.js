@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../index.css'
 
 export default props => {
-    const link = window.location.pathname.split('/')[window.location.pathname.split('/').length-1]
+    const link = window.location.pathname.split('/')[window.location.pathname.split('/').length - 1]
     const params = window.location.search.split('&')
     params[0] = params[0].split('?')[1]
     const [state, setState] = useState({
@@ -35,7 +35,7 @@ export default props => {
     })
 
     let newParams = Object.assign(...keys.map((n, i) => ({ [n]: vals[i] })))
-    
+
 
     useEffect(() => {
         fetch(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${state.link}&key=AIzaSyBj811HF4_j0-j_Q-NSvu0zA90Gipz4aNg`)
@@ -56,20 +56,22 @@ export default props => {
                 }
             })
     }, []) // eslint-disable-line react-hooks/exhaustive-deps
-        
+    console.log(state.params);
+
     return (
         <div className='wrapper'>
             <div className={`link_theme${state.params.theme}`}>
                 {
-                state.params.subs !== false && state.params.goal !== '' && state.params.goal !== undefined
-                    ? <label>Подписчиков: {state.info.subscriberCount}  /  {state.params.goal} </label> 
-                    : <label>Подписчиков: {state.info.subscriberCount} </label>
+                    state.params.subs === 'true'
+                        ? state.params.goal !== '' && state.params.goal !== undefined ?
+                            <label>Подписчиков: {state.info.subscriberCount}  /  {state.params.goal} </label> : <label>Подписчиков: {state.info.subscriberCount} </label>
+                        : null
                 }
                 {
-                    state.params.videos === true && <label>Загружено видео: {state.info.videoCount} </label>
+                    state.params.videos === 'true' ? <label>Загружено видео: {state.info.videoCount} </label> : null
                 }
                 {
-                    state.params.views === true && <label>Просмотров всего: {state.info.viewCount} </label>
+                    state.params.views === 'true' ? <label>Просмотров всего: {state.info.viewCount} </label> : null
                 }
             </div>
         </div>

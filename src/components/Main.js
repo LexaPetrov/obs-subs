@@ -114,7 +114,7 @@ export default props => {
                                 }
                             })}
                             checked={state.params.videos}
-                            text='Показывать чисто загруженных видео'
+                            text='Показывать число загруженных видео'
                         />
                         <Checkbox
                             onChange={() => setState({
