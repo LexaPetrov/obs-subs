@@ -61,6 +61,15 @@ export default props => {
         })
     }
 
+    function copyToClipBoard(){
+        const textField = document.createElement('textarea');
+        textField.innerText = state.res;
+        document.body.appendChild(textField);
+        textField.select();
+        document.execCommand('copy');
+        textField.remove();
+    }
+
 
     return (
         <div className='wrapper'>
@@ -184,6 +193,9 @@ export default props => {
                                 name='res'
                                 onChange={handleChange}
                             /> : null
+                        }
+                        {
+                            state.clicked ? <button className='go' onClick={copyToClipBoard}>Скопировать в буфер обмена</button> : null
                         }
                         {
                             state.clicked && state.link !== '' ?
