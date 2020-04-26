@@ -61,7 +61,7 @@ export default props => {
         })
     }
 
-    function copyToClipBoard(){
+    function copyToClipBoard() {
         const textField = document.createElement('textarea');
         textField.innerText = state.res;
         document.body.appendChild(textField);
@@ -73,9 +73,7 @@ export default props => {
 
     return (
         <div className='wrapper'>
-            <div className='header'>
-                <h2>1. Вставь ссылку на канал в формате https://www.youtube.com/channel/[ID канала]</h2>
-            </div>
+            <h2>1. Вставь ссылку на канал в формате https://www.youtube.com/channel/[ID канала]</h2>
             <div className='inputContainer'>
                 <form onSubmit={(event) => { event.preventDefault() }}>
                     <input type='text' placeholder='Вставь ссылку' required value={state.link} name='link' onChange={handleChange} />
@@ -183,7 +181,7 @@ export default props => {
                         </div>
                     </div>
                     <button type='submit' className='go' onClick={buttonClick}>
-                        3. Получи ссылку для OBS 
+                        3. Получи ссылку для OBS
                     </button>
                     <div>
                         {
@@ -195,7 +193,7 @@ export default props => {
                             /> : null
                         }
                         {
-                            state.clicked ? <button className='go' onClick={copyToClipBoard}>Скопировать в буфер обмена</button> : null
+                            state.clicked && state.link !== '' ? <button className='go' onClick={copyToClipBoard}>Скопировать в буфер обмена</button> : null
                         }
                         {
                             state.clicked && state.link !== '' ?
