@@ -14,7 +14,9 @@ export default props => {
             videos: false,
             subs: true,
             views: false,
-            transparent: '1'
+            transparent: '1',
+            lang: 'ru'
+
         },
         res: '',
         clicked: false,
@@ -177,6 +179,18 @@ export default props => {
                             checked={state.params.transparent === '3'}
                             text='Тёмный непрозрачный фон'
                             value='3'
+                        />
+                        <Checkbox
+                        name='lang'
+                            onChange={() => setState({
+                                ...state,
+                                params: {
+                                    ...state.params,
+                                    lang: state.params.lang === 'ru' ? 'eng' : 'ru'
+                                }
+                            })}
+                            checked={state.params.lang === 'eng'}
+                            text='🇺🇸english'
                         />
                     </div>
                     <h2>2. Выбери тему для своего счётчика</h2>
