@@ -67,7 +67,7 @@ export default props => {
     ]
 
     return (
-        <div className='wrapper' style={styles[+state.params.transparent]}>
+        <div className='wrapper' style={styles[+state.params.transparent - 1]}>
             <div className={`link_theme${state.params.theme}`}>
                 {
                     state.params.subs === 'true'
