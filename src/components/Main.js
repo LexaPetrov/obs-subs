@@ -4,18 +4,17 @@ import Checkbox from './Checkbox'
 import '../index.css'
 
 export default props => {
-    //https://www.youtube.com/channel/UC4-phUrGgm63fZ9qZ1GOxBQ?view_as=subscriber
     const loc = window.location.origin
     const [state, setState] = useState({
         loc,
         link: '',
-        // link: 'https://www.youtube.com/channel/UC4-phUrGgm63fZ9qZ1GOxBQ?view_as=subscriber',
         params: {
             theme: '1',
             goal: '',
             videos: false,
             subs: true,
-            views: false
+            views: false,
+            transparent: '1'
         },
         res: '',
         clicked: false,
@@ -40,6 +39,9 @@ export default props => {
         let channel
         if (state.link !== '') {
             channel = decodeURI(state.link)
+            if (!channel.includes('youtube.com')) {
+                channel = 'https://www.youtube.com/channel/' + channel
+            }
             channel = channel.split('/')[4].split('?')[0]
         }
 
@@ -73,10 +75,13 @@ export default props => {
 
     return (
         <div className='wrapper'>
-            <h2>1. Вставь ссылку на канал в формате https://www.youtube.com/channel/[ID канала]</h2>
+            <h2>
+                1. Вставь ссылку на канал в формате https://www.youtube.com/channel/ID_канала <br />
+                Или вставь ID канала, узнать его можешь по этой ссылке: <a href='https://www.youtube.com/account_advanced'>https://youtube.com/account_advanced</a>
+            </h2>
             <div className='inputContainer'>
                 <form onSubmit={(event) => { event.preventDefault() }}>
-                    <input type='text' placeholder='Вставь ссылку' required value={state.link} name='link' onChange={handleChange} />
+                    <input type='text' placeholder='Ссылка или ID канала' required value={state.link} name='link' onChange={handleChange} />
                     <div className='tools'>
                         <div>
                             <Checkbox
@@ -133,6 +138,45 @@ export default props => {
                             })}
                             checked={state.params.views}
                             text='Показывать число просмотров'
+                        />
+                        <Checkbox
+                        name='transparent'
+                            onChange={() => setState({
+                                ...state,
+                                params: {
+                                    ...state.params,
+                                    transparent: '1'
+                                }
+                            })}
+                            checked={state.params.transparent === '1'}
+                            text='Прозрачный фон'
+                            value='1'
+                        />
+                        <Checkbox
+                        name='transparent'
+                            onChange={() => setState({
+                                ...state,
+                                params: {
+                                    ...state.params,
+                                    transparent: '2'
+                                }
+                            })}
+                            checked={state.params.transparent === '2'}
+                            text='Полупрозрачный тёмный фон'
+                            value='2'
+                        />
+                        <Checkbox
+                        name='transparent'
+                            onChange={() => setState({
+                                ...state,
+                                params: {
+                                    ...state.params,
+                                    transparent: '3'
+                                }
+                            })}
+                            checked={state.params.transparent === '3'}
+                            text='Тёмный непрозрачный фон'
+                            value='3'
                         />
                     </div>
                     <h2>2. Выбери тему для своего счётчика</h2>

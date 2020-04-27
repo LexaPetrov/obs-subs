@@ -17,7 +17,8 @@ export default props => {
             goal: '',
             videos: false,
             subs: false,
-            views: false
+            views: false,
+            transparent: '1'
         }
     })
 
@@ -55,13 +56,18 @@ export default props => {
                             params: newParams
                         })
                     }
-                })
-        }, 300000)
+                }).catch(err => {})
+        }, 10000)
     }, []) // eslint-disable-line react-hooks/exhaustive-deps
-    console.log(state.params);
+
+    const styles = [
+        {background: 'rgba(0,0,0,0)'},
+        {background: 'rgba(57,57,57,0.5)'},
+        {background: 'rgba(57,57,57,1)'}
+    ]
 
     return (
-        <div className='wrapper'>
+        <div className='wrapper' style={styles[+state.params.transparent]}>
             <div className={`link_theme${state.params.theme}`}>
                 {
                     state.params.subs === 'true'
