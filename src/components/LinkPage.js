@@ -38,26 +38,30 @@ export default props => {
 
     let newParams = Object.assign(...keys.map((n, i) => ({ [n]: vals[i] })))
 
+    function fetchData() {
+        fetch(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${state.link}&key=AIzaSyDnICHbhs5jRfs_pxfWq26ZR9j32iZwedU`)
+            .then(res => {
+                return res.json()
+            })
+            .then((res) => {
+                if (res.items.length !== 0) {
+                    setState({
+                        ...state,
+                        info: {
+                            subscriberCount: res.items[0].statistics.subscriberCount,
+                            videoCount: res.items[0].statistics.videoCount,
+                            viewCount: res.items[0].statistics.viewCount
+                        },
+                        params: newParams
+                    })
+                }
+            }).catch(err => {})
+    }
 
     useEffect(() => {
+        fetchData()
         setInterval(() => {
-            fetch(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${state.link}&key=AIzaSyDnICHbhs5jRfs_pxfWq26ZR9j32iZwedU`)
-                .then(res => {
-                    return res.json()
-                })
-                .then((res) => {
-                    if (res.items.length !== 0) {
-                        setState({
-                            ...state,
-                            info: {
-                                subscriberCount: res.items[0].statistics.subscriberCount,
-                                videoCount: res.items[0].statistics.videoCount,
-                                viewCount: res.items[0].statistics.viewCount
-                            },
-                            params: newParams
-                        })
-                    }
-                }).catch(err => { })
+            fetchData()
         }, 600000)
     }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
