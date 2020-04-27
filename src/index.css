@@ -8,7 +8,13 @@
   font-weight: lighter;
 }
 
-a, a:visited {
+body {
+  position: relative;
+  padding-bottom: 60px;
+}
+
+a,
+a:visited {
   color: #003dda;
 }
 
@@ -30,7 +36,7 @@ input[type="text"] {
   border: 2px solid #003dda;
 }
 
-input[type='number'] {
+input[type="number"] {
   width: 200px;
   height: 50px;
   border-radius: 5px;
@@ -76,12 +82,11 @@ input[type='number'] {
   margin: 10px;
 }
 
-.themeItem img{
+.themeItem img {
   border-radius: 5px;
   width: 300px;
   box-shadow: 0px 0px 3px #ccc;
 }
-
 
 .themeItem label {
   display: flex;
@@ -90,11 +95,11 @@ input[type='number'] {
   align-items: center;
 }
 
-input[type='radio']{
+input[type="radio"] {
   margin-top: 5px;
 }
 
-input[type='radio']:checked + img{
+input[type="radio"]:checked + img {
   box-shadow: 0 0 0 2px #003dda;
 }
 
@@ -104,30 +109,32 @@ input[type='radio']:checked + img{
   flex-wrap: wrap;
   /*  align-items: center; */
   justify-content: center;
-  /* justify-content: space-around; */ 
+  /* justify-content: space-around; */
   font-size: 40px;
-  color: #9039FD;
+  color: #9039fd;
   font-weight: bold;
   font-style: italic;
-  text-shadow: 1px 1px  0px #fff;
+  text-shadow: 1px 1px 0px #fff;
 }
 
 .link_theme1:before {
-  content: '';
-  background: url('./img/youtube-2.png');
+  content: "";
+  background: url("./img/youtube-2.png");
   width: 50px;
   height: 50px;
   display: block;
-  background-size: 50px 50px; background-repeat: no-repeat;
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
 }
 
 .link_theme2:before {
-  content: '';
-  background: url('./img/youtube-1.png');
+  content: "";
+  background: url("./img/youtube-1.png");
   width: 55px;
   height: 55px;
   display: block;
-  background-size: 55px 55px; background-repeat: no-repeat;
+  background-size: 55px 55px;
+  background-repeat: no-repeat;
 }
 
 .link_theme2 {
@@ -136,12 +143,12 @@ input[type='radio']:checked + img{
   flex-wrap: wrap;
   /*  align-items: center; */
   justify-content: center;
-  /* justify-content: space-around; */ 
+  /* justify-content: space-around; */
   font-size: 40px;
-  color: #FFD000;
+  color: #ffd000;
   font-weight: bold;
   font-style: italic;
-  text-shadow: 1px 1px  0px #BF1F00;
+  text-shadow: 1px 1px 0px #bf1f00;
 }
 
 .link_theme3 {
@@ -150,27 +157,34 @@ input[type='radio']:checked + img{
   flex-wrap: wrap;
   /*  align-items: center; */
   justify-content: center;
-  /* justify-content: space-around; */ 
+  /* justify-content: space-around; */
   font-size: 40px;
-  color: #E9E8E6;
+  color: #e9e8e6;
   font-weight: bold;
   font-style: italic;
-  text-shadow: 1px 1px  0px red;
+  text-shadow: 1px 1px 0px red;
 }
 
 .link_theme3:before {
-  content: '';
-  background: url('./img/youtube-3.png');
+  content: "";
+  background: url("./img/youtube-3.png");
   width: 55px;
   height: 55px;
   display: block;
-  background-size: 55px 55px; background-repeat: no-repeat;
+  background-size: 55px 55px;
+  background-repeat: no-repeat;
 }
 
 .link_theme1 label,
 .link_theme2 label,
 .link_theme3 label {
   margin: 5px;
+}
+
+.language {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 /* ---------checkbox------------- */
@@ -247,7 +261,7 @@ input[type='radio']:checked + img{
     width: 300px;
   }
 
-  body{
+  body {
     padding-top: 10px;
   }
 
@@ -255,16 +269,16 @@ input[type='radio']:checked + img{
     margin: 0 auto;
   }
 
-  .themeItem img{
+  .themeItem img {
     border-radius: 5px;
     width: 200px;
   }
 
-  .tools, .themes {
+  .tools,
+  .themes {
     width: 300px;
   }
   .go {
     font-size: 16px;
   }
-
 }

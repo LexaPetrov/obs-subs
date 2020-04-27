@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Checkbox from './Checkbox'
 
 import '../index.css'
@@ -54,6 +54,12 @@ export default props => {
         })
     }
 
+    useEffect(() => {
+        if (state.clicked === true) {
+            buttonClick()
+        }
+    }, [state.params])
+
 
     function handleParamsChange(e) {
         setState({
@@ -74,16 +80,36 @@ export default props => {
         textField.remove();
     }
 
+    let lang = state.params.lang
 
     return (
         <div className='wrapper'>
-            <h2>
-                1. Вставь ссылку на канал в формате https://www.youtube.com/channel/ID_канала <br />
+            <div className="language">
+                <Checkbox
+                    name='lang'
+                    onChange={() => setState({
+                        ...state,
+                        params: {
+                            ...state.params,
+                            lang: state.params.lang === 'ru' ? 'eng' : 'ru'
+                        }
+                    })}
+                    checked={state.params.lang === 'eng'}
+                    text='🇺🇸switch to english'
+                />
+            </div>
+            {
+                lang === 'ru' ? <h2>
+                    1. Вставь ссылку на канал в формате https://www.youtube.com/channel/ID_канала <br />
                 Или вставь ID канала, узнать его можешь по этой ссылке: <a href='https://www.youtube.com/account_advanced'>https://youtube.com/account_advanced</a>
-            </h2>
+                </h2> : <h2>
+                        1. Paste the link to your channel in format https://www.youtube.com/channel/channel_ID <br />
+                Or paste channel ID, you can find out it here: <a href='https://www.youtube.com/account_advanced'>https://youtube.com/account_advanced</a>
+                    </h2>
+            }
             <div className='inputContainer'>
                 <form onSubmit={(event) => { event.preventDefault() }}>
-                    <input type='text' placeholder='Ссылка или ID канала' required value={state.link} name='link' onChange={handleChange} />
+                    <input type='text' placeholder={lang === 'ru' ? 'Ссылка или ID канала' : 'Channel link or channel ID'} required value={state.link} name='link' onChange={handleChange} />
                     <div className='tools'>
                         <div>
                             <Checkbox
@@ -93,7 +119,7 @@ export default props => {
                                     checked: !state.checked
                                 })}
                                 checked={state.checked}
-                                text='Добавить цель кол-ва подписчиков'
+                                text={lang === 'ru' ? 'Добавить цель кол-ва подписчиков' : 'Add sub goal'}
                             />
                             <div>
                                 {
@@ -101,7 +127,7 @@ export default props => {
                                         type='number'
                                         value={state.params.goal}
                                         name='goal'
-                                        placeholder='Введи число'
+                                        placeholder={lang === 'ru' ? 'Введи число' : 'Enter goal number'}
                                         onChange={handleParamsChange}
                                     /> : null
                                 }
@@ -117,7 +143,7 @@ export default props => {
                                 }
                             })}
                             checked={state.params.subs}
-                            text='Показывать число подписчиков'
+                            text={lang === 'ru' ? 'Показывать число подписчиков' : 'Show subscribers count'}
                         />
                         <Checkbox
                             onChange={() => setState({
@@ -128,7 +154,7 @@ export default props => {
                                 }
                             })}
                             checked={state.params.videos}
-                            text='Показывать число загруженных видео'
+                            text={lang === 'ru' ? 'Показывать число загруженных видео' : 'Show uploaded videos count'}
                         />
                         <Checkbox
                             onChange={() => setState({
@@ -139,10 +165,10 @@ export default props => {
                                 }
                             })}
                             checked={state.params.views}
-                            text='Показывать число просмотров'
+                            text={lang === 'ru' ? 'Показывать число просмотров' : 'Show views amount'}
                         />
                         <Checkbox
-                        name='transparent'
+                            name='transparent'
                             onChange={() => setState({
                                 ...state,
                                 params: {
@@ -151,11 +177,11 @@ export default props => {
                                 }
                             })}
                             checked={state.params.transparent === '1'}
-                            text='Прозрачный фон'
+                            text={lang === 'ru' ? 'Прозрачный фон' : 'Transparent background'}
                             value='1'
                         />
                         <Checkbox
-                        name='transparent'
+                            name='transparent'
                             onChange={() => setState({
                                 ...state,
                                 params: {
@@ -164,11 +190,11 @@ export default props => {
                                 }
                             })}
                             checked={state.params.transparent === '2'}
-                            text='Полупрозрачный тёмный фон'
+                            text={lang === 'ru' ? 'Полупрозрачный тёмный фон' : '50% Transparent dark background'}
                             value='2'
                         />
                         <Checkbox
-                        name='transparent'
+                            name='transparent'
                             onChange={() => setState({
                                 ...state,
                                 params: {
@@ -177,23 +203,15 @@ export default props => {
                                 }
                             })}
                             checked={state.params.transparent === '3'}
-                            text='Тёмный непрозрачный фон'
+                            text={lang === 'ru' ? 'Тёмный непрозрачный фон' : 'Non-transparent dark background'}
                             value='3'
                         />
-                        <Checkbox
-                        name='lang'
-                            onChange={() => setState({
-                                ...state,
-                                params: {
-                                    ...state.params,
-                                    lang: state.params.lang === 'ru' ? 'eng' : 'ru'
-                                }
-                            })}
-                            checked={state.params.lang === 'eng'}
-                            text='🇺🇸english'
-                        />
+
                     </div>
-                    <h2>2. Выбери тему для своего счётчика</h2>
+                    {
+                        lang === 'ru' ? <h2>2. Выбери тему для своего счётчика</h2> : <h2>2. Choose a theme for the counter</h2>
+                    }
+
                     <div className='themes'>
                         <div className='themeItem'>
                             <label htmlFor='theme1'>
@@ -206,7 +224,7 @@ export default props => {
                                         }
                                     })
                                 }} type="radio" name="theme" id='theme1' value="1" />
-                                <img alt='' src='theme1.png' />
+                                <img alt='' src={lang === 'ru' ? 'theme1.png' : 'theme1_eng.png'} />
                             </label>
                         </div>
                         <div className='themeItem'>
@@ -220,7 +238,7 @@ export default props => {
                                         }
                                     })
                                 }} type="radio" id='theme2' name="theme" value="2" />
-                                <img alt='' src='theme2.png' />
+                                <img alt='' src={lang === 'ru' ? 'theme2.png' : 'theme2_eng.png'} />
                             </label>
                         </div>
                         <div className='themeItem'>
@@ -234,12 +252,13 @@ export default props => {
                                         }
                                     })
                                 }} type="radio" name="theme" id='theme3' value="3" />
-                                <img alt='' src='theme3.png' />
+                                <img alt='' src={lang === 'ru' ? 'theme3.png' : 'theme3_eng.png'} />
                             </label>
                         </div>
                     </div>
+
                     <button type='submit' className='go' onClick={buttonClick}>
-                        3. Получи ссылку для OBS
+                        {lang === 'ru' ? '3. Получи ссылку для OBS' : '3. Get the link to OBS'}
                     </button>
                     <div>
                         {
@@ -251,11 +270,11 @@ export default props => {
                             /> : null
                         }
                         {
-                            state.clicked && state.link !== '' ? <button className='go' onClick={copyToClipBoard}>Скопировать в буфер обмена</button> : null
+                            state.clicked && state.link !== '' ? <button className='go' onClick={copyToClipBoard}>{lang === 'ru' ? 'Скопировать в буфер обмена' : 'Copy to clipboard'}</button> : null
                         }
                         {
                             state.clicked && state.link !== '' ?
-                                <h2>4. Вставь полученную ссылку в CLR браузер OBS</h2> : null
+                                <h2>{lang === 'ru' ? '4. Вставь полученную ссылку в CLR браузер OBS' : '4. Paste result link into CLR browser'}</h2> : null
                         }
                     </div>
                 </form>
