@@ -38,23 +38,25 @@ export default props => {
 
 
     useEffect(() => {
-        fetch(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${state.link}&key=AIzaSyBj811HF4_j0-j_Q-NSvu0zA90Gipz4aNg`)
-            .then(res => {
-                return res.json()
-            })
-            .then((res) => {
-                if (res.items.length !== 0) {
-                    setState({
-                        ...state,
-                        info: {
-                            subscriberCount: res.items[0].statistics.subscriberCount,
-                            videoCount: res.items[0].statistics.videoCount,
-                            viewCount: res.items[0].statistics.viewCount
-                        },
-                        params: newParams
-                    })
-                }
-            })
+        setInterval(() => {
+            fetch(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${state.link}&key=AIzaSyBj811HF4_j0-j_Q-NSvu0zA90Gipz4aNg`)
+                .then(res => {
+                    return res.json()
+                })
+                .then((res) => {
+                    if (res.items.length !== 0) {
+                        setState({
+                            ...state,
+                            info: {
+                                subscriberCount: res.items[0].statistics.subscriberCount,
+                                videoCount: res.items[0].statistics.videoCount,
+                                viewCount: res.items[0].statistics.viewCount
+                            },
+                            params: newParams
+                        })
+                    }
+                })
+        }, 300000)
     }, []) // eslint-disable-line react-hooks/exhaustive-deps
     console.log(state.params);
 
