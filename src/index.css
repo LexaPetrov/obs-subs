@@ -175,9 +175,35 @@ input[type="radio"]:checked + img {
   background-repeat: no-repeat;
 }
 
+.link_themene_creator {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /*  align-items: center; */
+  justify-content: center;
+  /* justify-content: space-around; */
+  font-size: 40px;
+  color: #06bbff;
+  font-weight: bold;
+  font-style: italic;
+  text-shadow: 1px 1px 0px #ccc;
+}
+
+.link_themene_creator:before {
+  content: "";
+  background: url("./img/ne_creator_logo.png");
+  width: 55px;
+  height: 55px;
+  display: block;
+  background-size: 55px 55px;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+}
+
 .link_theme1 label,
 .link_theme2 label,
-.link_theme3 label {
+.link_theme3 label,
+.link_themene_creator label {
   margin: 5px;
 }
 
