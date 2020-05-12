@@ -214,7 +214,7 @@ export default props => {
 
                     <div className='themes'>
                         <div className='themeItem'>
-                            <label htmlFor='theme1'>
+                            <label htmlFor='theme1'  className="container">
                                 <input onClick={() => {
                                     setState({
                                         ...state,
@@ -225,10 +225,11 @@ export default props => {
                                     })
                                 }} type="radio" name="theme" id='theme1' value="1" />
                                 <img alt='' src={lang === 'ru' ? 'theme1.png' : 'theme1_eng.png'} />
+                                <span className="checkmark"></span>
                             </label>
                         </div>
                         <div className='themeItem'>
-                            <label htmlFor='theme2'>
+                            <label htmlFor='theme2' className="container">
                                 <input onClick={() => {
                                     setState({
                                         ...state,
@@ -239,10 +240,11 @@ export default props => {
                                     })
                                 }} type="radio" id='theme2' name="theme" value="2" />
                                 <img alt='' src={lang === 'ru' ? 'theme2.png' : 'theme2_eng.png'} />
+                                <span className="checkmark"></span>
                             </label>
                         </div>
                         <div className='themeItem'>
-                            <label htmlFor='theme3'>
+                            <label htmlFor='theme3'  className="container">
                                 <input onClick={() => {
                                     setState({
                                         ...state,
@@ -253,6 +255,7 @@ export default props => {
                                     })
                                 }} type="radio" name="theme" id='theme3' value="3" />
                                 <img alt='' src={lang === 'ru' ? 'theme3.png' : 'theme3_eng.png'} />
+                                <span className="checkmark"></span>
                             </label>
                         </div>
                     </div>
