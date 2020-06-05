@@ -26,6 +26,10 @@ a:visited {
   text-align: center;
 }
 
+.pt26 {
+  padding-top: 26px;
+}
+
 input[type="text"] {
   height: 50px;
   border-radius: 5px;
