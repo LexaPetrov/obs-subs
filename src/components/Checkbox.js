@@ -1,5 +1,5 @@
 import React from 'react'
-import '../index.css'
+import './Checkbox.css'
 
 export default ({ name, value, text, onChange, checked }) => {
 

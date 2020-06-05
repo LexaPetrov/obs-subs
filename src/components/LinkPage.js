@@ -4,7 +4,9 @@ import '../index.css'
 export default props => {
     const link = window.location.pathname.split('/')[window.location.pathname.split('/').length - 1]
     const params = window.location.search.split('&')
+    let sign = 'https://subsobs.xyz'
     params[0] = params[0].split('?')[1]
+
     const [state, setState] = useState({
         link,
         info: {
@@ -32,7 +34,6 @@ export default props => {
             keys.push(newParam[0])
             vals.push(newParam[1])
         }
-
         return 0
     })
 
@@ -71,6 +72,9 @@ export default props => {
         { background: 'rgba(57,57,57,1)' }
     ]
 
+
+
+
     return (
         <div className='wrapper' style={styles[+state.params.transparent - 1]}>
             <div className={`link_theme${state.params.theme}`}>
@@ -89,6 +93,7 @@ export default props => {
                     state.params.views === 'true' ? <label>{state.params.lang === 'ru' ? 'Просмотров всего: ' : 'Views amount: '}  {state.info.viewCount} </label> : null
                 }
             </div>
+            <div className={`link_theme${state.params.theme} sign`}><label>{sign}</label></div>
         </div>
     )
 }
