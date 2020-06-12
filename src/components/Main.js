@@ -85,6 +85,7 @@ export default props => {
     return (
         <div className='wrapper'>
             <div className="language">
+               
                 <Checkbox
                     name='lang'
                     onChange={() => setState({
@@ -95,7 +96,8 @@ export default props => {
                         }
                     })}
                     checked={state.params.lang === 'eng'}
-                    text='🇺🇸switch to english'
+                    text='switch to english'
+                    label={ <label className='flag_icon'></label>}
                 />
             </div>
             {

@@ -213,6 +213,7 @@ input[type="radio"]:checked + img {
 
 .language {
   position: absolute;
+  display: flex;
   bottom: 0;
   right: 0;
 }
@@ -238,3 +239,18 @@ input[type="radio"]:checked + img {
   display: none;
 }
 
+.flag_icon {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.flag_icon::before {
+  background-image: url("./img/us_flag.png");
+  background-size: 20px 20px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  content: "";
+  margin-right: 5px;
+}

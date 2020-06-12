@@ -1,10 +1,10 @@
 import React from 'react'
 import './Checkbox.css'
 
-export default ({ name, value, text, onChange, checked }) => {
+export default ({ name, value, text, onChange, checked, label }) => {
 
     return (
-        <div style={{margin: '20px'}}>
+        <div style={{ margin: '20px' }}>
             <label className="label">
                 <div className="toggle">
                     <input className="toggle-state" checked={checked} onChange={onChange} type="checkbox" name={name} value={value} />
@@ -13,7 +13,10 @@ export default ({ name, value, text, onChange, checked }) => {
                     </div>
                     <div className="active-bg"></div>
                 </div>
-                <div className="label-text">{text}</div>
+                <div className="label-text"
+               /*Только для иконки флага */ style={{ display: 'flex' }}><label>{label}</label>
+                    {text}
+                </div>
             </label>
         </div>
     )
