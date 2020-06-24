@@ -296,10 +296,15 @@ footer {
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin: 0 auto;
   margin-top: 50px;
   bottom: 0;
   height: 40px;
   font-size: 14px;
+}
+
+footer label {
+  margin: 0;
 }
 
 .footer__label1:after {
