@@ -286,8 +286,8 @@ export default props => {
 
             </div>
             <div className='downloads'>
-                <a className='downloads__link downloads__link__windows' download='download' href='downloads/subsobs.exe'>{lang === 'ru' ? 'Скачать приложение для Windows' : 'Download desktop app for Windows'}</a>
-                <a className='downloads__link downloads__link__macos' download='download' href='downloads/subsobs.dmg'>{lang === 'ru' ? 'Скачать приложение для MacOS' : 'Download desktop app for MacOS'}</a>
+                <a className='downloads__link downloads__link__windows' download href='downloads/obs-subs Setup 1.0.0.exe'>{lang === 'ru' ? 'Скачать приложение для Windows' : 'Download desktop app for Windows'}</a>
+                <a className='downloads__link downloads__link__macos' download href='downloads/obs-subs.zip'>{lang === 'ru' ? 'Скачать приложение для MacOS' : 'Download desktop app for MacOS'}</a>
             </div>
             <footer>
                 <label className='footer__label1'>made with</label><label>by <a target='_blank' rel="noopener noreferrer" alt='' href='http://lexapetrov.github.io'>petrovdev</a></label>
