@@ -220,7 +220,7 @@ input[type="radio"]:checked + img {
 
 .sign {
   /* visibility: hidden; */
-  font-size: 14px;
+  font-size: 18px;
   animation: visible 1800s infinite ease;
 }
 
@@ -235,7 +235,7 @@ input[type="radio"]:checked + img {
   }
 }
 
-.sign::before{
+.sign::before {
   display: none;
 }
 
@@ -253,4 +253,62 @@ input[type="radio"]:checked + img {
   height: 20px;
   content: "";
   margin-right: 5px;
+}
+.downloads {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.downloads__link {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.downloads__link__windows:before {
+  background-image: url("./img/icon__windows.png");
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+  margin-right: 5px;
+}
+
+.downloads__link__macos:before {
+  background-image: url("./img/icon__macos.png");
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+  margin-right: 5px;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 50px;
+  bottom: 0;
+  height: 40px;
+  font-size: 14px;
+}
+
+.footer__label1:after {
+  background-image: url("./img/heart__icon.png");
+  background-size: 16px 16px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  content: "";
+  margin-right: 5px;
+  margin-left: 5px;
 }

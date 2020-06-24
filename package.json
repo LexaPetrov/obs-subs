@@ -1,10 +1,15 @@
 {
   "name": "obs-subs",
   "version": "0.1.0",
+  "author": "lexapetrov",
+  "description": "Subs OBS web app",
+  "main": "public/electron.js",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "cp-cli": "^2.0.0",
+    "electron-is-dev": "^1.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router": "^5.1.2",
@@ -15,9 +20,12 @@
     "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "build": "react-scripts build && cp build/index.html build/404.html",
+    "build": "react-scripts build && cp-cli build/index.html build/404.html",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron-dev": "concurrently \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-pack": "electron-builder -c.extraMetadata.main=build/electron.js",
+    "preelectron-pack": "react-scripts build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,6 +43,11 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.2.0"
+    "concurrently": "^5.2.0",
+    "cross-env": "^7.0.2",
+    "electron": "^9.0.5",
+    "electron-builder": "^22.7.0",
+    "gh-pages": "^2.2.0",
+    "wait-on": "^5.0.1"
   }
 }
