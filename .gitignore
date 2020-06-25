@@ -11,7 +11,11 @@
 # production
 /build
 /dist
+
 /public/downloads
+/build/downloads
+
+
 
 # misc
 .DS_Store
