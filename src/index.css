@@ -289,15 +289,26 @@ input[type="radio"]:checked + img {
   margin-right: 5px;
 }
 
+.downloads__link__linux:before {
+  background-image: url("./img/icon__linux.png");
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+  margin-right: 5px;
+}
+
 footer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   width: 100%;
   margin: 0 auto;
   margin-top: 50px;
+  padding-bottom: 50px;
   bottom: 0;
   height: 40px;
   font-size: 14px;

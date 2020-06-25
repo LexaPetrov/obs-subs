@@ -275,7 +275,7 @@ export default props => {
                             /> : null
                         }
                         {
-                            state.clicked && state.link !== '' ? <button className='go' onClick={copyToClipBoard}>{lang === 'ru' ? 'Скопировать в буфер обмена' : 'Copy to clipboard'}</button> : null
+                            state.clicked && state.link !== '' ? <button className='go' onClick={copyToClipBoard}>{lang === 'ru' ? 'Скопировать в буфер обмена' : 'Copy link to clipboard'}</button> : null
                         }
                         {
                             state.clicked && state.link !== '' ?
@@ -286,11 +286,17 @@ export default props => {
 
             </div>
             <div className='downloads'>
-                <a className='downloads__link downloads__link__windows' download href='downloads/obs-subs Setup 1.0.0.zip'>{lang === 'ru' ? 'Скачать приложение для Windows' : 'Download desktop app for Windows'}</a>
-                <a className='downloads__link downloads__link__macos' download href='downloads/obs-subs.zip'>{lang === 'ru' ? 'Скачать приложение для MacOS' : 'Download desktop app for MacOS'}</a>
+                <a className='downloads__link downloads__link__windows' download href='downloads/windows-obs-subs Setup 1.0.0.zip'>{lang === 'ru' ? 'Скачать приложение для Windows' : 'Download desktop app for Windows'}</a>
+                <a className='downloads__link downloads__link__macos' download href='downloads/macos-obs-subs.zip'>{lang === 'ru' ? 'Скачать приложение для MacOS' : 'Download desktop app for MacOS'}</a>
+                <a className='downloads__link downloads__link__linux' download href='downloads/linux-obs-subs-1.0.0.zip'>{lang === 'ru' ? 'Скачать приложение для Linux' : 'Download desktop app for Linux'}</a>
             </div>
             <footer>
-                <label>made with</label><label className='footer__label1'></label><label>by <a target='_blank' rel="noopener noreferrer" alt='' href='http://lexapetrov.github.io'>petrovdev</a></label>
+                <div>
+                    <label>made with</label><label className='footer__label1'></label><label>by <a target='_blank' rel="noopener noreferrer" alt='' href='http://lexapetrov.github.io'>petrovdev</a></label>
+                </div>
+                <div>
+                    <a href='https://github.com/lexapetrov/obs-subs/'>github repository</a>
+                </div>
             </footer>
         </div>
     )
