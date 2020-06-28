@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import '../index.css'
+import reducer from '../reducer/reducer';
+import { getLinkData } from '../reducer/actions';
 
 export default props => {
     const link = window.location.pathname.split('/')[window.location.pathname.split('/').length - 1]
@@ -7,7 +9,7 @@ export default props => {
     let sign = 'https://subsobs.xyz'
     params[0] = params[0].split('?')[1]
 
-    const [state, setState] = useState({
+    const [state, dispatch] = useReducer(reducer, {
         link,
         info: {
             subscriberCount: '',
@@ -25,6 +27,7 @@ export default props => {
         }
     })
 
+
     let keys = []
     let vals = []
 
@@ -40,25 +43,9 @@ export default props => {
     let newParams = Object.assign(...keys.map((n, i) => ({ [n]: vals[i] })))
 
     function fetchData() {
-        fetch(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${state.link}&key=AIzaSyDnICHbhs5jRfs_pxfWq26ZR9j32iZwedU`)
-            .then(res => {
-                return res.json()
-            })
-            .then((res) => {
-                if (res.items.length !== 0) {
-                    setState({
-                        ...state,
-                        info: {
-                            subscriberCount: res.items[0].statistics.subscriberCount,
-                            videoCount: res.items[0].statistics.videoCount,
-                            viewCount: res.items[0].statistics.viewCount
-                        },
-                        params: newParams
-                    })
-                }
-            }).catch(err => {})
+        getLinkData(state.link, dispatch, newParams)
     }
-
+    
     useEffect(() => {
         fetchData()
         setInterval(() => {
@@ -71,8 +58,6 @@ export default props => {
         { background: 'rgba(57,57,57,0.5)' },
         { background: 'rgba(57,57,57,1)' }
     ]
-
-
 
 
     return (

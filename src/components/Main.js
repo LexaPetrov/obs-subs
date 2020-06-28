@@ -58,7 +58,7 @@ export default props => {
         if (state.clicked === true) {
             buttonClick()
         }
-    }, [state.params])
+    }, [state.params]) // eslint-disable-line react-hooks/exhaustive-deps
 
 
     function handleParamsChange(e) {
