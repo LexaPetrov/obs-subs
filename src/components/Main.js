@@ -85,7 +85,6 @@ export default props => {
     return (
         <div className='wrapper'>
             <div className="language">
-
                 <Checkbox
                     name='lang'
                     onChange={() => setState({
@@ -286,10 +285,17 @@ export default props => {
 
             </div>
             <div className='downloads'>
-                
                 <a className='downloads__link downloads__link__windows' download href='https://github.com/LexaPetrov/obs-subs/releases/download/1.0.0/windows-obs-subs.Setup.1.0.0.zip'>{lang === 'ru' ? 'Скачать приложение для Windows' : 'Download desktop app for Windows'}</a>
                 <a className='downloads__link downloads__link__macos' download href='https://github.com/LexaPetrov/obs-subs/releases/download/1.0.0/macos-obs-subs.zip'>{lang === 'ru' ? 'Скачать приложение для MacOS' : 'Download desktop app for MacOS'}</a>
                 <a className='downloads__link downloads__link__linux' download href='https://github.com/LexaPetrov/obs-subs/releases/download/1.0.0/linux-obs-subs-1.0.0.zip'>{lang === 'ru' ? 'Скачать приложение для Linux' : 'Download desktop app for Linux'}</a>
+            </div>
+            <div className={`donation`}>
+                <a className='donation__link donation__link__1' target='_blank' rel="noopener noreferrer" href='https://www.tinkoff.ru/rm/petrov.aleksey68/IXJ5N7740' alt=''>
+                </a>
+                <a className='donation__link donation__link__2' target='_blank' rel="noopener noreferrer" href='https://money.yandex.ru/to/41001921826050' alt=''>
+                </a>
+                <a className='donation__link donation__link__3' target='_blank' rel="noopener noreferrer" href='https://www.donationalerts.com/r/ne_creator' alt=''>
+                </a>
             </div>
             <footer>
                 <div>

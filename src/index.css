@@ -254,7 +254,7 @@ input[type="radio"]:checked + img {
   content: "";
   margin-right: 5px;
 }
-.downloads {
+.downloads, .donation {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
@@ -267,6 +267,43 @@ input[type="radio"]:checked + img {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.donation__link {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.donation__link__1:before {
+  background-image: url("./img/socials__tinkoff.png");
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+  margin-right: 5px;
+}
+
+.donation__link__2:before {
+  background-image: url("./img/socials__yandex.png");
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+  margin-right: 5px;
+}
+
+.donation__link__3:before {
+  background-image: url("./img/socials__alerts.png");
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+  margin-right: 5px;
 }
 
 .downloads__link__windows:before {
