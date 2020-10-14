@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer } from 'react';
-import '../index.css'
+import '../css/index.css'
 import reducer from '../reducer/reducer';
 import { getLinkData } from '../reducer/actions';
 

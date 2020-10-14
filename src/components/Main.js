@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Checkbox from './Checkbox'
 
-import '../index.css'
+import '../css/index.css'
 
 export default props => {
     const loc = window.location.origin
@@ -97,6 +97,11 @@ export default props => {
                     checked={state.params.lang === 'eng'}
                     text='switch to english'
                     label={<label className='flag_icon'></label>}
+                />
+                <Checkbox
+                    name='theme_switch'
+                    classes={['no_bg', 'no_border']}
+                    onChange={() => ''}
                 />
             </div>
             {

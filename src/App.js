@@ -1,8 +1,10 @@
 import React from 'react'
-import './index.css'
+import './css/index.css'
+import './css/media.css'
 import { Route, Switch } from 'react-router-dom'
 import Main from './components/Main'
 import LinkPage from './components/LinkPage'
+
 
 function App() {
   return (

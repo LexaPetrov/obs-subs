@@ -1,6 +1,6 @@
 @font-face {
   font-family: "HelveticaRegular", sans-serif;
-  src: url("./fonts/HelveticaRegular.otf");
+  src: url("../fonts/HelveticaRegular.otf");
 }
 
 * {
@@ -123,7 +123,7 @@ input[type="radio"]:checked + img {
 
 .link_theme1:before {
   content: "";
-  background: url("./img/youtube-2.png");
+  background: url("../img/youtube-2.png");
   width: 50px;
   height: 50px;
   display: block;
@@ -133,7 +133,7 @@ input[type="radio"]:checked + img {
 
 .link_theme2:before {
   content: "";
-  background: url("./img/youtube-1.png");
+  background: url("../img/youtube-1.png");
   width: 55px;
   height: 55px;
   display: block;
@@ -171,7 +171,7 @@ input[type="radio"]:checked + img {
 
 .link_theme3:before {
   content: "";
-  background: url("./img/youtube-3.png");
+  background: url("../img/youtube-3.png");
   width: 55px;
   height: 55px;
   display: block;
@@ -195,7 +195,7 @@ input[type="radio"]:checked + img {
 
 .link_themene_creator:before {
   content: "";
-  background: url("./img/ne_creator_logo.png");
+  background: url("../img/ne_creator_logo.png");
   width: 55px;
   height: 55px;
   display: block;
@@ -246,7 +246,7 @@ input[type="radio"]:checked + img {
 }
 
 .flag_icon::before {
-  background-image: url("./img/us_flag.png");
+  background-image: url("../img/us_flag.png");
   background-size: 20px 20px;
   display: inline-block;
   width: 20px;
@@ -277,7 +277,7 @@ input[type="radio"]:checked + img {
 }
 
 .donation__link__1:before {
-  background-image: url("./img/socials__tinkoff.png");
+  background-image: url("../img/socials__tinkoff.png");
   background-size: 48px 48px;
   display: inline-block;
   width: 48px;
@@ -287,7 +287,7 @@ input[type="radio"]:checked + img {
 }
 
 .donation__link__2:before {
-  background-image: url("./img/socials__yandex.png");
+  background-image: url("../img/socials__yandex.png");
   background-size: 48px 48px;
   display: inline-block;
   width: 48px;
@@ -297,7 +297,7 @@ input[type="radio"]:checked + img {
 }
 
 .donation__link__3:before {
-  background-image: url("./img/socials__alerts.png");
+  background-image: url("../img/socials__alerts.png");
   background-size: 48px 48px;
   display: inline-block;
   width: 48px;
@@ -307,7 +307,7 @@ input[type="radio"]:checked + img {
 }
 
 .downloads__link__windows:before {
-  background-image: url("./img/icon__windows.png");
+  background-image: url("../img/icon__windows.png");
   background-size: 48px 48px;
   display: inline-block;
   width: 48px;
@@ -317,7 +317,7 @@ input[type="radio"]:checked + img {
 }
 
 .downloads__link__macos:before {
-  background-image: url("./img/icon__macos.png");
+  background-image: url("../img/icon__macos.png");
   background-size: 48px 48px;
   display: inline-block;
   width: 48px;
@@ -327,7 +327,7 @@ input[type="radio"]:checked + img {
 }
 
 .downloads__link__linux:before {
-  background-image: url("./img/icon__linux.png");
+  background-image: url("../img/icon__linux.png");
   background-size: 48px 48px;
   display: inline-block;
   width: 48px;
@@ -356,7 +356,7 @@ footer label {
 }
 
 .footer__label1:after {
-  background-image: url("./img/heart__icon.png");
+  background-image: url("../img/heart__icon.png");
   background-size: 16px 16px;
   display: inline-block;
   width: 16px;
