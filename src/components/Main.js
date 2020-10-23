@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Checkbox from './Checkbox'
 
-import '../index.css'
+import '../css/index.css'
 
 export default props => {
     const loc = window.location.origin
@@ -85,7 +85,6 @@ export default props => {
     return (
         <div className='wrapper'>
             <div className="language">
-
                 <Checkbox
                     name='lang'
                     onChange={() => setState({
@@ -99,8 +98,9 @@ export default props => {
                     text='switch to english'
                     label={<label className='flag_icon'></label>}
                 />
+
                 <Checkbox
-                    name='lang'
+                    name='theme'
                     onChange={() => {
                         if (window.localStorage.getItem('theme') === 'dark') {
                             window.localStorage.setItem('theme', 'light')
@@ -115,6 +115,7 @@ export default props => {
                     checked={window.localStorage.getItem('theme') === 'dark'}
                     text={lang === 'ru' ? '🌙 тёмная тема' : '🌙 darkmode'}
                 />
+
             </div>
             {
                 lang === 'ru' ? <h2>
@@ -302,10 +303,21 @@ export default props => {
 
             </div>
             <div className='downloads'>
+<<<<<<< HEAD
 
+=======
+>>>>>>> f9b56c079a7c54891e1f09d7fefb818d608602f1
                 <a className='downloads__link downloads__link__windows' download href='https://github.com/LexaPetrov/obs-subs/releases/download/1.0.0/windows-obs-subs.Setup.1.0.0.zip'>{lang === 'ru' ? 'Скачать приложение для Windows' : 'Download desktop app for Windows'}</a>
                 <a className='downloads__link downloads__link__macos' download href='https://github.com/LexaPetrov/obs-subs/releases/download/1.0.0/macos-obs-subs.zip'>{lang === 'ru' ? 'Скачать приложение для MacOS' : 'Download desktop app for MacOS'}</a>
                 <a className='downloads__link downloads__link__linux' download href='https://github.com/LexaPetrov/obs-subs/releases/download/1.0.0/linux-obs-subs-1.0.0.zip'>{lang === 'ru' ? 'Скачать приложение для Linux' : 'Download desktop app for Linux'}</a>
+            </div>
+            <div className={`donation`}>
+                <a className='donation__link donation__link__1' target='_blank' rel="noopener noreferrer" href='https://www.tinkoff.ru/rm/petrov.aleksey68/IXJ5N7740' alt=''>
+                </a>
+                <a className='donation__link donation__link__2' target='_blank' rel="noopener noreferrer" href='https://money.yandex.ru/to/41001921826050' alt=''>
+                </a>
+                <a className='donation__link donation__link__3' target='_blank' rel="noopener noreferrer" href='https://www.donationalerts.com/r/ne_creator' alt=''>
+                </a>
             </div>
             <footer>
                 <div>
