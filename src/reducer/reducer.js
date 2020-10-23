@@ -1,15 +1,14 @@
 import {
-    FETCH_DATA
+    FETCH_LINK_DATA
 } from './actionType'
 
 
 export default (state = {}, action) => {
     switch (action.type) {
-        case FETCH_DATA:
+        case FETCH_LINK_DATA:
             let {data} = action.payload
             return { 
                 ...state, 
-                loading: "",
                 info: {
                     subscriberCount: data.items[0].statistics.subscriberCount,
                     videoCount: data.items[0].statistics.videoCount,

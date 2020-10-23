@@ -5,10 +5,13 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
 // "homepage": "http://lexapetrov.github.io/obs-subs",
+import Layout from './components/Layout'
 
 ReactDOM.render(
   <BrowserRouter basename={process.env.PUBLIC_URL}>
-    <App />
+    <Layout>
+      <App />
+    </Layout>
   </BrowserRouter>, document.getElementById('root')
 );
 serviceWorker.unregister();

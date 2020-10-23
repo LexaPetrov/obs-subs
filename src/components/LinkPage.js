@@ -1,7 +1,7 @@
 import React, { useEffect, useReducer } from 'react';
 import '../index.css'
 import reducer from '../reducer/reducer';
-import { getLinkData } from '../reducer/actions';
+import * as actions from '../reducer/actions';
 
 export default props => {
     const link = window.location.pathname.split('/')[window.location.pathname.split('/').length - 1]
@@ -42,14 +42,10 @@ export default props => {
 
     let newParams = Object.assign(...keys.map((n, i) => ({ [n]: vals[i] })))
 
-    function fetchData() {
-        getLinkData(state.link, dispatch, newParams)
-    }
-    
     useEffect(() => {
-        fetchData()
+        actions.getLinkData(state.link, dispatch, newParams)
         setInterval(() => {
-            fetchData()
+            actions.getLinkData(state.link, dispatch, newParams)
         }, 600000)
     }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -58,7 +54,6 @@ export default props => {
         { background: 'rgba(57,57,57,0.5)' },
         { background: 'rgba(57,57,57,1)' }
     ]
-
 
     return (
         <div className='wrapper pt26' style={styles[+state.params.transparent - 1]}>

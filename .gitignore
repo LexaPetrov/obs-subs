@@ -11,6 +11,7 @@
 # production
 /build
 /dist
+/downloads
 
 /public/downloads
 /build/downloads

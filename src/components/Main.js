@@ -99,6 +99,22 @@ export default props => {
                     text='switch to english'
                     label={<label className='flag_icon'></label>}
                 />
+                <Checkbox
+                    name='lang'
+                    onChange={() => {
+                        if (window.localStorage.getItem('theme') === 'dark') {
+                            window.localStorage.setItem('theme', 'light')
+                        } else {
+                            window.localStorage.setItem('theme', 'dark')
+                            // const style = document.createElement("style");
+                            // document.head.appendChild(style);
+                            // style.innerHTML = require('../dark.css');
+                        }
+                        window.location.reload()
+                    }}
+                    checked={window.localStorage.getItem('theme') === 'dark'}
+                    text={lang === 'ru' ? '🌙 тёмная тема' : '🌙 darkmode'}
+                />
             </div>
             {
                 lang === 'ru' ? <h2>
@@ -286,7 +302,7 @@ export default props => {
 
             </div>
             <div className='downloads'>
-                
+
                 <a className='downloads__link downloads__link__windows' download href='https://github.com/LexaPetrov/obs-subs/releases/download/1.0.0/windows-obs-subs.Setup.1.0.0.zip'>{lang === 'ru' ? 'Скачать приложение для Windows' : 'Download desktop app for Windows'}</a>
                 <a className='downloads__link downloads__link__macos' download href='https://github.com/LexaPetrov/obs-subs/releases/download/1.0.0/macos-obs-subs.zip'>{lang === 'ru' ? 'Скачать приложение для MacOS' : 'Download desktop app for MacOS'}</a>
                 <a className='downloads__link downloads__link__linux' download href='https://github.com/LexaPetrov/obs-subs/releases/download/1.0.0/linux-obs-subs-1.0.0.zip'>{lang === 'ru' ? 'Скачать приложение для Linux' : 'Download desktop app for Linux'}</a>
