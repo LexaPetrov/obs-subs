@@ -83,6 +83,7 @@ export default props => {
     let lang = state.params.lang
 
     return (
+        
         <div className='wrapper'>
             <div className="language">
                 <Checkbox
@@ -303,10 +304,6 @@ export default props => {
 
             </div>
             <div className='downloads'>
-<<<<<<< HEAD
-
-=======
->>>>>>> f9b56c079a7c54891e1f09d7fefb818d608602f1
                 <a className='downloads__link downloads__link__windows' download href='https://github.com/LexaPetrov/obs-subs/releases/download/1.0.0/windows-obs-subs.Setup.1.0.0.zip'>{lang === 'ru' ? 'Скачать приложение для Windows' : 'Download desktop app for Windows'}</a>
                 <a className='downloads__link downloads__link__macos' download href='https://github.com/LexaPetrov/obs-subs/releases/download/1.0.0/macos-obs-subs.zip'>{lang === 'ru' ? 'Скачать приложение для MacOS' : 'Download desktop app for MacOS'}</a>
                 <a className='downloads__link downloads__link__linux' download href='https://github.com/LexaPetrov/obs-subs/releases/download/1.0.0/linux-obs-subs-1.0.0.zip'>{lang === 'ru' ? 'Скачать приложение для Linux' : 'Download desktop app for Linux'}</a>
