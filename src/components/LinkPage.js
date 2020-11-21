@@ -6,7 +6,7 @@ import * as actions from '../reducer/actions';
 export default props => {
     const link = window.location.pathname.split('/')[window.location.pathname.split('/').length - 1]
     const params = window.location.search.split('&')
-    let sign = 'https://subsobs.xyz'
+    let sign = `https://subsobs.xyz \n https://mysocials.ru`
     params[0] = params[0].split('?')[1]
 
     const [state, dispatch] = useReducer(reducer, {

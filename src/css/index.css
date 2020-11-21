@@ -222,7 +222,8 @@ input[type="radio"]:checked + img {
 .sign {
   /* visibility: hidden; */
   font-size: 18px;
-  animation: visible 1800s infinite ease;
+  /* animation: visible 1800s infinite ease; */
+  white-space: pre-line;
 }
 
 @keyframes visible {
